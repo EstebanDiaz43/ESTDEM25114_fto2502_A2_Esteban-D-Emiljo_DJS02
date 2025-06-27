@@ -9,12 +9,12 @@ import header from "./header.js";
  * @principle SRP - Only responsible for application startup logic like event binding and rendering initial grid.
  */
 function init() {
-  document.body.insertAdjacentHTML("afterbegin", header());
   document
     .getElementById("closeModal")
     .addEventListener("click", createModal.close);
   const grid = createGrid();
   grid.render(podcasts);
+  document.body.insertAdjacentHTML("afterbegin", header());
 }
 
 init();
