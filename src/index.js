@@ -1,16 +1,29 @@
 import { createModal } from "./components/createModal.js";
 import header from "./header.js";
 
+/**
+ * Custom element for displaying a podcast preview card.
+ * @class
+ * @extends HTMLElement
+ */
 class PodcastPreview extends HTMLElement {
   constructor() {
     super();
     this.shadow = this.attachShadow({ mode: "open" });
   }
 
+   /**
+   * Called when the element is inserted into the DOM.
+   * @returns {void}
+   */
   connectedCallback() {
     this.render();
   }
 
+  /**
+   * Renders the podcast preview card.
+   * @returns {void}
+   */
   render() {
     this.shadow.innerHTML = `
     <style>
